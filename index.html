@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile Card</title>
+  
+</head>
+<body>
+
+  <article class="profile-card" data-testid="test-profile-card" aria-labelledby="profile-name">
+    
+    <figure class="profile-avatar-container">
+      <img 
+        src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=300&q=80" 
+        alt="Profile photograph of Alex Developer" 
+        data-testid="test-user-avatar"
+      >
+    </figure>
+
+    <div class="profile-content">
+      
+      <header>
+        <h2 id="profile-name" data-testid="test-user-name">Alex Developer</h2>
+      </header>
+
+      <section aria-label="Biography">
+        <p class="bio" data-testid="test-user-bio">
+          Hi, I'm Alex! A passionate frontend developer obsessed with web standards, semantic HTML, and building accessible, inclusive user experiences for everyone.
+        </p>
+      </section>
+
+      <section aria-label="Current Time Indicator">
+        <p class="time-tracker">
+          Epoch Time: 
+          <span data-testid="test-user-time" aria-live="polite">Loading...</span> ms
+        </p>
+      </section>
+
+      <nav class="social-nav" aria-label="Social Profiles">
+        <ul data-testid="test-user-social-links">
+          <li>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-github">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-twitter">
+              Twitter
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" data-testid="test-user-social-linkedin">
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="preferences-container">
+        
+        <section class="preferences-section" aria-label="Hobbies">
+          <h3>Hobbies</h3>
+          <ul data-testid="test-user-hobbies">
+            <li>Mechanical Keyboards</li>
+            <li>Hiking and Camping</li>
+            <li>Open Source Contributing</li>
+          </ul>
+        </section>
+
+        <section class="preferences-section" aria-label="Dislikes">
+          <h3>Dislikes</h3>
+          <ul data-testid="test-user-dislikes">
+            <li>Non-semantic markup</li>
+            <li>Cold coffee</li>
+            <li>Slow internet connections</li>
+          </ul>
+        </section>
+
+      </div>
+    </div>
+  </article>
+
+  <script src="app.js"></script>
+</body>
+</html>
