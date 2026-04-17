@@ -1,0 +1,165 @@
+
+  /* CSS Variables for theming and consistent WCAG AA compliant colors */
+  :root {
+    --primary-text: #1a1a1a;
+    --secondary-text: #4a4a4a;
+    --background-color: #ffffff;
+    --card-bg: #fdfdfd;
+    --border-color: #e0e0e0;
+    --link-color: #0056b3; /* High contrast blue */
+    --link-hover: #003d82;
+    --focus-ring: #0056b3;
+    --radius: 12px;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f0f2f5;
+    color: var(--primary-text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  /* Profile Card Layout */
+  .profile-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Mobile first: stack vertically */
+  }
+
+  /* Left column / Top row (Avatar) */
+  .profile-avatar-container {
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+  }
+
+  .profile-avatar-container img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--background-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Right column / Bottom row (Content) */
+  .profile-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  header h2 {
+    font-size: 1.75rem;
+    margin-bottom: 8px;
+    color: var(--primary-text);
+  }
+
+  .bio {
+    color: var(--secondary-text);
+    line-height: 1.6;
+    word-wrap: break-word; /* Prevents layout breaks on long text */
+  }
+
+  .time-tracker {
+    font-family: monospace;
+    background: #f4f4f4;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    color: var(--secondary-text);
+    border: 1px solid #ddd;
+  }
+
+  .time-tracker span {
+    font-weight: bold;
+    color: var(--primary-text);
+  }
+
+  /* Lists and Nav */
+  .social-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+  }
+
+  .social-nav a {
+    color: var(--link-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 0;
+  }
+
+  .social-nav a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+  }
+
+  .preferences-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .preferences-section {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  .preferences-section h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 5px;
+  }
+
+  .preferences-section ul {
+    list-style-position: inside;
+    color: var(--secondary-text);
+    line-height: 1.6;
+  }
+
+  /* Accessibility: Visible Focus States */
+  a:focus-visible, 
+  button:focus-visible {
+    outline: 3px solid var(--focus-ring);
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+
+  /* Desktop Breakpoint */
+  @media (min-width: 650px) {
+    .profile-card {
+      flex-direction: row; /* Desktop: arrange left/right */
+    }
+    
+    .profile-avatar-container {
+      flex: 0 0 35%; /* Fixed width for avatar column */
+      border-right: 1px solid var(--border-color);
+      padding: 40px 20px;
+    }
+    
+    .profile-content {
+      flex: 1;
+    }
+  }
